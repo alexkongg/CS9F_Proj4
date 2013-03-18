@@ -17,11 +17,15 @@ ListNode::ListNode (int k, ListNode* ptr) {
 // Delete the node and all nodes accessible through it.
 // Precondition: this != 0.
 ListNode::~ListNode () {
-	// this version is buggy
+  
+	// Old version was buggy because it called delete p, which is a recursive call to the destructor.
+	
 	cout << "Deleting node with value " << myValue << endl;
-	for (ListNode* p=this; p!=0; p=p->myNext) {
-		delete p;
+	ListNode* p=this; 
+	if (p!=0) {
+    delete p->myNext;
 	}
+  p = 0;
 }
 // Print the list.
 void ListNode::Print () {
