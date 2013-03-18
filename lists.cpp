@@ -19,13 +19,15 @@ ListNode::ListNode (int k, ListNode* ptr) {
 ListNode::~ListNode () {
   
 	// Old version was buggy because it called delete p, which is a recursive call to the destructor.
-	
+	/*
+	for (ListNode* p=this; p!=0; p=p->myNext) {
+  		delete p;
+  }
+	*/
 	cout << "Deleting node with value " << myValue << endl;
-	ListNode* p=this; 
-	if (p!=0) {
-    delete p->myNext;
+	if (this!=0) {
+    delete myNext;
 	}
-  p = 0;
 }
 // Print the list.
 void ListNode::Print () {

@@ -18,5 +18,7 @@ int main () {
     if (list) {
 	    delete list;
     }
+    
+    
     return 0;
 }
