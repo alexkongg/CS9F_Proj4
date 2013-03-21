@@ -25,6 +25,7 @@ ListNode::~ListNode () {
   }
 	*/
 	cout << "Deleting node with value " << myValue << endl;
+  myValue = 0;
 	if (this!=0) {
     delete myNext;
 	}
